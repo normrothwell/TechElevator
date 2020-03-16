@@ -149,7 +149,7 @@ public class VendProcess {
 	    int nickles = totalPennies / 5;
 	  
 		balance = balance.subtract(balance);
-		if (writer != null) {
+		if (writer != null) { //required to make testing work
 		writer.println(getCurrentTimeStamp() + "\tGive change" + "\tquarters: " + quarters + "\tdimes: " + dimes + "\tnickles: " + nickles + "\tBalance: $" + String.format("%.2f", balance));
 		}
 		String msg = "quarters: " + quarters + "\ndimes: " + dimes + "\nnickles: " + nickles;
@@ -162,7 +162,6 @@ public class VendProcess {
                 "yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String time = sdfDate.format(date);
-        System.out.println(time);
         return time;
     }
 	

@@ -2,18 +2,13 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
-public class FoodType implements ManageVendingTypes {
+public class FoodType {
 
 	private String sound;
 	private String slot;
 	private String name;
 	private BigDecimal price;
 	private int quantity;
-	
-	
-	
-	
-	
 
 
 
@@ -46,7 +41,6 @@ public class FoodType implements ManageVendingTypes {
 		return quantity;
 	}
 
-	@Override
 	public String getSound() {
 		return sound;
 	}
