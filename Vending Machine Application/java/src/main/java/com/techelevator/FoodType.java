@@ -2,7 +2,7 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
-public class FoodType {
+public class FoodType { //This class is going to be extended on each of the 4 different vend types to ensure correct sound is played on purchase
 
 	private String sound;
 	private String slot;

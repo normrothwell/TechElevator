@@ -35,19 +35,19 @@ public class VendingMachineCLI {
 	}
 
 	public void run() throws IOException {
-		vending.initializeFileWriter();
-		vending.getInitialInventory();
+		vending.initializeFileWriter(); //initializes file writer at start of program
+		vending.getInitialInventory(); // initializes inventory at start of program
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 			System.out.println(choice);
-			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
+			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) { //gets list of current inventory
 				vending.getInventory();
-			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
+			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) { // starts select product loop where money can be fed in and purchases can be made
 				purchaseLoop = true;
 				while (purchaseLoop) {
 				String purchaseMenu = (String) menu.getChoiceFromOptions(PURCHASE_MENU_OPTIONS);
 					if (purchaseMenu.equals(PURCHASE_MENU_OPTION_FEED_MONEY)){
-						String feedMenu = (String) menu.getChoiceFromOptions(FEED_MENU_OPTIONS);
+						String feedMenu = (String) menu.getChoiceFromOptions(FEED_MENU_OPTIONS); //adds money in big decimal format
 							if (feedMenu.equals(FEED_MENU_OPTION_10)){
 								BigDecimal money = new BigDecimal(10);
 								vending.addMoney(money);
@@ -61,15 +61,15 @@ public class VendingMachineCLI {
 								BigDecimal money = new BigDecimal(1);
 								vending.addMoney(money);
 							}else System.out.println("Please select a valid option");
-					}else if (purchaseMenu.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) {
+					}else if (purchaseMenu.equals(PURCHASE_MENU_OPTION_SELECT_PRODUCT)) { //does all the work to process a purchase
 						vending.makeSale();
-					}else if (purchaseMenu.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) {
+					}else if (purchaseMenu.equals(PURCHASE_MENU_OPTION_FINISH_TRANSACTION)) { //gives changes and exits loop of select product menu
 						System.out.println(vending.giveChange());
 						purchaseLoop = false;
 					}
 					}
 				
-			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) {
+			} else if (choice.equals(MAIN_MENU_OPTION_EXIT)) { //closes file writer so that file can be written
 				System.out.println("Thank you for shopping!");
 				vending.closeFileWriter();
 				System.exit(0);

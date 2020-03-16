@@ -29,7 +29,7 @@ public class VendProcess {
 		this.stock = stock;
 	}
 
-	public List<FoodType> getInitialInventory() {
+	public List<FoodType> getInitialInventory() { // pulls inventory from a CSV file and saves it to a list
 		File document = new File("vendingmachine.csv");
 
 		try {
@@ -62,7 +62,7 @@ public class VendProcess {
 		return stock;
 	}
 
-	public List<FoodType> getInventory() {
+	public List<FoodType> getInventory() { //gets current inventory and displays it
 		
 		for (FoodType foodType : stock) {
 			
@@ -76,11 +76,11 @@ public class VendProcess {
 		return stock;
 	}
 
-	public void makeSale() {
+	public void makeSale() { //processes the sale of items
 		boolean isLoop = true;
 		String purchaseItem;
 		Scanner input = new Scanner(System.in);
-		String error = "Please make a valid selection";
+		String error = "Please make a valid selection"; //default error message. This will be changed as errors become more specific
 
 		do {
 			getInventory();
@@ -89,17 +89,17 @@ public class VendProcess {
 			purchaseItem = purchaseItem.toLowerCase();
 			
 			
-			for (FoodType food : stock) {
-				String foodTest = food.getSlot().toLowerCase();
-				if (foodTest.equals(purchaseItem)){
-					int quantity = food.getQuantity();
-						if (food.getQuantity() > 0) {
-							if ((balance.compareTo((food.getPrice())) == 1) || (balance.compareTo((food.getPrice())) == 0)) {
-								balance = balance.subtract(food.getPrice());
-								quantity--;
-								food.setQuantity(quantity);
-								isLoop = false;
-								System.out.println(food.getSound());
+			for (FoodType food : stock) { 
+				String foodTest = food.getSlot().toLowerCase(); //ensures the program works whether user inputs upper or lower case letters
+				if (foodTest.equals(purchaseItem)){ 
+					int quantity = food.getQuantity(); //gets quantity of item selected
+						if (food.getQuantity() > 0) { //ensures there is at lesat 1 available for purchase
+							if ((balance.compareTo((food.getPrice())) == 1) || (balance.compareTo((food.getPrice())) == 0)) { //ensures you have enough money to purchase
+								balance = balance.subtract(food.getPrice()); //takes away the cost of the item from your balance
+								quantity--; //takes away 1 from the stock available
+								food.setQuantity(quantity); //and sets it to the new quantity that is available for the future
+								isLoop = false; 
+								System.out.println(food.getSound()); //prints the correct sound based on type of item chosen
 								System.out.println("\nYour current balance is $" + String.format("%.2f", balance));
 								writer.println(getCurrentTimeStamp() + "\t" + food.getSlot() + "\t" + food.getName() + "\tCost of food is: $" + food.getPrice() + "\tBalance remaining is: $" + String.format("%.2f", this.balance));
 							}else {
@@ -123,7 +123,7 @@ public class VendProcess {
 
 	}
 
-	public BigDecimal addMoney(BigDecimal money) throws FileNotFoundException {
+	public BigDecimal addMoney(BigDecimal money) throws FileNotFoundException { // used to feed more money into the machine
 		
 		balance = balance.add(money);
 		System.out.println("\nYou fed $" + String.format("%.2f", money) + " Your current balance is $" + String.format("%.2f", balance));
@@ -133,7 +133,7 @@ public class VendProcess {
 		return balance;
 	}
 
-	public String giveChange() {
+	public String giveChange() { //takes big decimal value, throws it into an integer, calculates change, and prints it via a system out
 
 		BigDecimal changeBalance = getBalance().multiply(new BigDecimal (100));
 		int totalPennies = changeBalance.intValue();
@@ -157,7 +157,7 @@ public class VendProcess {
 
 	}
 
-	public String getCurrentTimeStamp() {
+	public String getCurrentTimeStamp() { //get time stamp for file writer class as each transaction is time stamped
         SimpleDateFormat sdfDate = new SimpleDateFormat(
                 "yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
@@ -165,12 +165,12 @@ public class VendProcess {
         return time;
     }
 	
-	public void initializeFileWriter() throws IOException {
+	public void initializeFileWriter() throws IOException { //initializes the file writer which will write to a file log.txt which is specified at the start of the class in the newFile variable
 		writer = new PrintWriter(this.newFile);
 		newFile.createNewFile();
 	}
 	
-	public void closeFileWriter() {
+	public void closeFileWriter() { //closes file writer to ensure output is written to the file
 		writer.close();
 	}
 
