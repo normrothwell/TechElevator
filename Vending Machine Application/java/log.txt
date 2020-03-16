@@ -1,0 +1,4 @@
+2020-02-12 15:57:03	You fed $10.00 Your current balance is $10.00
+2020-02-12 15:57:23	A1	Potato Crisps	Cost of food is: $3.05	Balance remaining is: $6.95
+2020-02-12 15:57:34	D2	Little League Chew	Cost of food is: $0.95	Balance remaining is: $6.00
+2020-02-12 15:57:45	Give change	quarters: 24	dimes: 0	nickles: 0	Balance: $0.00
