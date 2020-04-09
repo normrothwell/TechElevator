@@ -40,11 +40,7 @@ public class Mortgage {
 			amountOfLoan -= paymentAmount;
 			
 		}
-		
-
-		
-		
-		
+			
 		input.close();
 	}
 
