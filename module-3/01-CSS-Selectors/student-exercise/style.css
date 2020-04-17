@@ -1,0 +1,108 @@
+:root {
+    --top-row-height: 120px;
+    --gutter: 20px;
+    --blue: #00adee;
+    --light-blue: rgba(0, 173, 238, 0.4);
+    --green: #8cc36f;
+    --light-green: rgba(170, 239, 135, 0.8);  
+    --bg-color: rgba(192, 192, 192, 0.1);
+    --subheading: rgba(0, 0, 0, 0.6);
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+  }
+
+ 
+
+  .h2{
+    color:rgba(170, 239, 135, 0.8);
+  }
+
+
+  aside{
+    font-size: 25px;
+    padding-top: 60px; 
+    display: inline-block;
+    width: 200px;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    vertical-align: middle;
+  }
+
+  li{
+    list-style: none;
+    block-size: 50px;
+    padding-left: 25px;
+    
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: rgba(0, 173, 238, 0.4);
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 173, 238, 0.4);
+    border-bottom-width: 2px;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: rgba(0, 173, 238, 0.4);
+  }
+
+  .header{
+  left: 250px;
+  display: inline-block;
+  width: 250px;
+  }
+
+  aside > img{
+    display: inline-block;
+    width: auto;
+    height: 190px;
+    padding-left: 25px;
+    
+    
+  }
+
+  header > img {
+    padding-left: 250px;
+  }
+
+  header > p{
+    padding-left: 250px;
+  }
+
+  main > img{
+    padding-left: 250px;
+  }
+
+  section > div > h2{
+    color:rgba(170, 239, 135, 0.8);
+  }
+    
+section > div{
+  display:inline-block;
+  width: 500px;
+  padding-right: 20px;
+
+}
+
+#what-we-do{
+  top: 10px;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: rgba(170, 239, 135, 0.8);
+  padding-left: 250px;
+  width: 750px;
+}
+
+#our-work {
+ border-right-style: solid;
+ border-right-width: 2px;
+ border-right-color: rgba(170, 239, 135, 0.8);
+ 
+}
+
+footer{
+  padding-left: 250px;
+  }
+  

@@ -1,0 +1,26 @@
+/*
+Attributes to adjust:
+flex-direction: row, reverse-row, column, reverse-column
+flex-wrap: wrap, wrap-reverse
+justify-content: : flex-start, flex-end, center, space-between, space-around, space-evenly.
+align-items: : flex-start, flex-end, center, stretch, baseline. 	
+*/
+
+.myContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color:#CA1FE5;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.myContainer > div {
+  background-color: green;
+  width: 50px;
+  text-align: center;
+  margin: 10px;
+}
+

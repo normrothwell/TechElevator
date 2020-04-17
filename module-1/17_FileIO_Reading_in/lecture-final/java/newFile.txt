@@ -1,0 +1,6 @@
+Hello there, Class!
+This is the file that
+I am reading from.
+This is such a great file!
+The quick brown fox jumped over the lazy dog!
+Dogs are not lazy...
