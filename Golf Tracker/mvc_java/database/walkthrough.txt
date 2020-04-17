@@ -1,0 +1,33 @@
+home page
+
+shoot to maggie to talk about design
+
+course search
+
+shoot to Kevin to talk about weather
+
+Ryan talks about signup/login
+
+show validation works
+
+login as new user and then change password
+
+
+then log out and back in as admin
+
+throw it over to Maggie to talk about dashboard
+
+Maggie to me to talk about schedule tee time
+
+schedule a tee time, pick a day you don't have a tee time already
+
+show that the first available is the first increment of 10 after
+
+schedule a time
+
+show it scheduled on the dashboard
+
+pick same course/same day to show warning and that time is no longer available.
+
+shoot to Ryan to talk about add score
+
