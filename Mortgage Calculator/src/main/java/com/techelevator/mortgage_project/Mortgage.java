@@ -40,7 +40,7 @@ public class Mortgage {
 			amountOfLoan -= paymentAmount;
 			
 		}
-			
+		System.out.println(String.format("%.6f", minimumPayment));	
 		input.close();
 	}
 

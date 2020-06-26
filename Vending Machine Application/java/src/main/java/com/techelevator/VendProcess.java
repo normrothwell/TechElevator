@@ -165,6 +165,13 @@ public class VendProcess {
         return time;
     }
 	
+	public List<Integer> test (List<Integer> a, List<Integer> b){
+		List<Integer> answer = new ArrayList<>();
+		List<List<Integer>> stuff = new ArrayList<>();
+		stuff.get(0).get(0);
+		return answer;
+	}
+	
 	public void initializeFileWriter() throws IOException { //initializes the file writer which will write to a file log.txt which is specified at the start of the class in the newFile variable
 		writer = new PrintWriter(this.newFile);
 		newFile.createNewFile();

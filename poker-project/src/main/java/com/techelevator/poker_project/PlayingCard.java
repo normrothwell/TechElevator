@@ -72,6 +72,8 @@ public String evaluateHand (PlayingCard[] hand) {
 		break;
 		
 	}
+	evaluation.substring(8);
+	
 	return evaluation;
 }
 
