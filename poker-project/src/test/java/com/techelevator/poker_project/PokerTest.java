@@ -23,5 +23,19 @@ public class PokerTest {
 		assertEquals(expected, actual);
 	}
 
-
+	@Test
+	public void TestThreeOfAKind() {
+		PlayingCard test = new PlayingCard();
+		PlayingCard[] testHand = new PlayingCard [5];
+		testHand[0] = new PlayingCard('h', 'Q');
+		testHand[1] = new PlayingCard('d', 'K');
+		testHand[2] = new PlayingCard('d', '3');
+		testHand[3] = new PlayingCard('s', '3');
+		testHand[4] = new PlayingCard('c', '3');
+		
+		
+		String actual = test.evaluateHand(testHand);
+		String expected = "Three of a Kind";
+		assertEquals(expected, actual);
+	}
 }
